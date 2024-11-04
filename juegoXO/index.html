@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table></table>
+  <script>
+    const nRows = 4;
+    const nColumns = 6;
+    const table = document.querySelector('table');
+    for(let i = 0; i < nRows; i++) {
+      let td = document.createElement('td');
+      td.textContent = Math.random < 0.5 ? "X" : "O";
+      td.setAttribute('onclick', 'change(this)');
+      td.append(td);
+    }
+    
+    function change(td) {
+      console.log(td.textContent);
+      td.textContent = td.textContent == "X" ? "O" : "X";
+    }
+  </script>
+</body>
+</html>

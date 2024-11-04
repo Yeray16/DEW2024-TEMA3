@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #name {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Título</h1>
+  <p>Nombre: <span id="name">--</span></p>
+  <p>Edad: <span id="age">--</span></p>
+  <div id = "content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione rem quo incidunt aliquid unde tenetur quae cupiditate sint, non ut perferendis beatae laboriosam quas velit, repudiandae tempora nobis voluptatum. Amet!</p>
+  </div>
+  <p>Listado números:</p>
+  <ul id = "numbers"></ul>
+  <script>
+    const name = "Pepe";
+    const age = 22;
+    const nameSpan = document.querySelector("#name");
+    nameSpan.textContent = name;
+    const ageSpan = document.querySelector("#age");
+    ageSpan.textContent = age;
+
+    const content = document.querySelector("#content");
+    content.innerHTML = "Esto es una linea con <strong>importantes</strong> palabras";
+
+    // Crea un listado de números desde el start hasta el end
+    let start = 4;
+    let end = 12;
+    let list = document.querySelector("#numbers");
+    for(let i = start; i <= end; i++) {
+      list.innerHTML += "<li>"+ i + "</li>";
+    }
+  </script>
+</body>
+</html>

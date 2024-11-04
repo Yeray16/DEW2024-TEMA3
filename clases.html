@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .bgcyan {
+      background-color: cyan;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .padding {
+      padding: 20px;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Indicar clases al párrafo</h1>
+  <p>Seleccione la opción que quiere realizar:</p>
+  <p>
+    <button onclick="addClass('red')">color rojo</button>
+    <button onclick="addClass('bgcyan')">fondo azul claro</button>
+    <button onclick="addClass('underline')">subrayar</button>
+    <button onclick="addClass('padding')">espaciado</button>
+    <button onclick="addClass('capitalize')">Capitalizar</button>
+  </p>
+  <p>Tamaño de fuente: <input type="range" name="fontsize" id="" min="8" max="64" value="12">
+    <button onclick="changeFontSize()">Cambiar tamaño de la fuente</button>
+    <button onclick="incrementFont()"> + </button>
+    <button onclick="decrementFont()"> - </button>
+  </p>  
+  <div id="content">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis itaque quibusdam accusantium ratione ipsum repellendus nam, harum, aliquid quasi voluptate pariatur perferendis illum optio ut. Est cumque assumenda nostrum suscipit!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis itaque quibusdam accusantium ratione ipsum repellendus nam, harum, aliquid quasi voluptate pariatur perferendis illum optio ut. Est cumque assumenda nostrum suscipit!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis itaque quibusdam accusantium ratione ipsum repellendus nam, harum, aliquid quasi voluptate pariatur perferendis illum optio ut. Est cumque assumenda nostrum suscipit!</p>
+  </div>
+  <script>
+    const content = document.querySelector('#content');
+    const input = document.querySelector('input[name="fontsize"]');
+    // function addRed() {
+    //   content.classList.toggle('red');
+    // }
+
+    // function addCyan () {
+    //   content.classList.toggle('bgcyan');
+    // }
+
+    function addClass(className) {
+      content.classList.toggle(className);
+    }
+
+    function changeFontSize () {
+      let size = input.value;
+      //content.setAttribute('style', 'font-size: ' + size + 'px;');
+      content.style.fontSize = size +"px";
+    }
+
+    function incrementFont () {
+      let size = content.style.fontSize || '12px';
+      size = parseInt(size);
+      console.log('original: ' + size)
+      size++;
+      console.log('incrementa: ' + size)
+      content.style.fontSize = size +"px";
+    }
+
+    function decrementFont () {
+      let size = content.style.fontSize || '12px';
+      size = parseInt(size);
+      console.log(size)
+      size--;
+      console.log('disminuye:' + size)
+      content.style.fontSize = size +"px";
+    }
+  </script>
+</body>
+</html>

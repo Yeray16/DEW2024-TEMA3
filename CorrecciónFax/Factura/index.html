@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="factura.js" async></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Factura</title>
+</head>
+<body>
+    <h1>Factura</h1>
+        <label for="concept">Concepto 
+            <input type="text" name="concept" id="concept"></label><br><br>
+        <label for="amount">Cantidad 
+            <input type="number" name="amount" id="amount" min="0"></label><br><br>
+        <label for="price">Precio 
+            <input type="number" name="price" id="price" min="0">€</label><br><br><br>
+        <button onclick="insertElements()">Insertar</button><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th id="header">Concepto</th>
+                    <th id="header">Cantidad</th>
+                    <th id="header">Precio Unitario</th>
+                    <th id="header">Precio total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">Subtotal</th>
+                    <th id="subtotal"> 0.00 &euro;</td>
+                </tr>
+
+                <tr>
+                    <th>Tasa:</th>
+                    <th id="rate"></th>
+                    <th>Impuestos:</th>
+                    <th id="taxes">0.00 &euro;</td>
+                </tr>
+                <tr>
+                    <th colspan="3">TOTAL</th>
+                    <td id="total">0.00 &euro;</td>
+                </tr>
+            </tfoot>
+        </table><br>
+        <button class="button"onclick="changeRate(5)">Tasa 5%</button>
+        <button class="button"onclick="changeRate(15)">Tasa 15%</button>
+        <button class="button"onclick="changeRate(30)">Tasa 30%</button>
+    </body>
+</html>
