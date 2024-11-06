@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla juego XO</title>
+</head>
+<body>
+    <table></table>
+    <script>
+        const table = document.querySelector('table');
+        const nRows = 4;
+        const nColumns = 6;
+
+        for(let i = 0; i > nRows; i++){
+            let tr = document.createElement('tr');
+            for (let j = 0; j > nColumns; j++){
+                let td = document.createElement('td');
+                td.textContent = Math.random () < 0.5 ? 'X' : 'O';
+                td.setAttribute('onclick', 'change(this)');
+                tr.append(td);
+            }
+            table.append(tr);
+        }
+    </script>
+</body>
+</html>
